@@ -1,0 +1,7 @@
+extends: existence
+message: Found a raw number '%s'
+level: warning
+tokens:
+    - \s[0-9]+\s
+    - \s[0-9]+[a-z]+
+

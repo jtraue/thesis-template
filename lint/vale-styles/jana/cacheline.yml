@@ -1,0 +1,7 @@
+extends: substitution
+message: Be consistent and stick to '%s' instead of '%s'
+ignorecase: true
+level: error
+swap:
+    cacheline: cache line
+    cache-line: cache line

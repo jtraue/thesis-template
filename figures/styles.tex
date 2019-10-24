@@ -1,0 +1,18 @@
+\makeatletter
+\tikzset{%
+    no shadows/.code={\let\tikz@preactions\pgfutil@empty},
+}
+
+\newlength{\clwidth}
+\setlength{\clwidth}{8cm}
+\newlength{\clHeight}
+\setlength{\clHeight}{0.6cm}
+
+\tikzset{%
+    color:volatile/.style
+        = {color=btuLightBlue, fill=btuLightBlue, text=btuBlack},
+    color:persistent/.style
+        = {color=btuMagenta, fill=btuMagenta, text=btuBlack},
+}
+
+\makeatother

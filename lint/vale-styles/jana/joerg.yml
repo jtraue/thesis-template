@@ -1,0 +1,6 @@
+extends: substitution
+message: Joerg wants you to use '%s' instead of '%s'
+ignorecase: true
+level: error
+swap:
+  in case of : in the case of

@@ -1,0 +1,266 @@
+% ==================================================
+% LATEX header file
+% ==================================================
+% ==================================================
+%
+% ==================================================
+% document class
+% ==================================================
+\RequirePackage{fix-cm}     % fix support for modern type fonts
+\documentclass[%
+    paper=a4,               % use a4 paper
+    BCOR=10mm,              % width of border for printing
+    DIV=13,                 % proportion for empty and non-empty parts of a page
+    headinclude,            % include header in typearea calculation
+    %footinclude,           % include footer in typearea calculation
+    % oneside,              % one sided printing
+    twoside=true,               % two sided printing
+    cleardoublepage=empty,  % empty backsides for two sided printing
+    titlepage,              % support for title environment
+    %pointednumbers,        % numbers (in headlines) with ending points
+    numbers=noenddot,       % numbers (in headlines) without ending points
+    parskip=half,           % a half line beetwen paragraphs
+    %parskip=false,         % indentation and no skip between paragraphs
+    %chapterprefix,         % chapter names with prefix "Chapter"
+    chapterprefix=true, % chapter names without prefix "Chapter"
+    %headsepline,           % line below header
+    %footsepline,           % line above footer
+    %smallheadings,         % size of header is small
+    headings=normal,            % size of header is normal
+    %bigheadings,           % size of header is large
+    bibliography=totoc,             % include bibliography in table of contents
+    %bibtotocnumbered,      % include bibliography in table if contents (numbered)
+    listof=totoc,               % include lists in table of contents
+    %liststotocnumbered,    % include lists in table of contents (numbered)
+    index=totoc,                % include index in table if contents
+    fontsize=10pt,          % fontsize in points
+    pagesize=pdftex,        % define typearea for pdftex usage
+    %pagesize=dvips,        % define typearea for dvi/ps usage
+    headheight=32pt,
+]{scrbook}                  % class of the document
+\usepackage{scrhack}
+%
+% ==================================================
+% include packages
+% ==================================================
+%
+% --------------------------------------------------
+% character encoding and fonts for the document
+% \usepackage[utf8]{inputenc}   % ansi coding - for english
+\usepackage[T1]{fontenc}        % t1 fonts
+\usepackage[T1]{url}            % web adresses with t1 style
+\urlstyle{tt}                   % web adresses in tt-style
+%
+% --------------------------------------------------
+% packages for layout
+\usepackage{microtype}
+\usepackage{setspace}           % support different line spacings
+\usepackage{multicol}           % support multiple columns
+%\usepackage[section]{placeins} % insert float barriers before each section
+\usepackage{ellipsis}           % corrects wrong spaces after dots
+%
+% --------------------------------------------------
+% language localisation and quotes depending on language
+%\usepackage[ngerman]{babel}            % German with new orthography
+\usepackage[ngerman, UKenglish]{babel}  % English language
+\usepackage[natbib=true]{biblatex}
+%
+% --------------------------------------------------
+\usepackage{float}
+% bibliography
+% \usepackage[square, comma, sort]{natbib}  % support for different bib styles
+% \setlength{\bibsep}{1.0\baselineskip}     % adjust spacing of entries for natbib
+%
+% --------------------------------------------------
+% qoutes
+\usepackage[english=american]{csquotes}     % american style qoutes
+%
+% --------------------------------------------------
+% mathematical
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%
+% --------------------------------------------------
+\usepackage[hyperref, table]{xcolor}
+% pdf creation
+% TODO: change to your needs
+\usepackage[%
+    pdftitle={The ultimate guide on surviving Pan-Galactic Gargle Blasters},%
+    pdfsubject={Dissertation},%
+    pdfauthor={Jana Traue},%
+    pdfkeywords={Lets, see, who, changes, this},%
+    pdfpagemode=UseOutlines,%
+    plainpages=false,%
+    pdfpagelabels,
+    bookmarksnumbered,
+    pdfstartview=FitV,
+    pdfpagelayout=SinglePage,
+    pdfdisplaydoctitle=true,
+    unicode=true,
+]{hyperref}
+%
+% --------------------------------------------------
+% graphics
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{flafter}    % never insert figure before the reference
+\usepackage{booktabs, colortbl}
+
+\definecolor{btuBlack}{cmyk}{0.1,0,0,0.8}
+\definecolor{btuRed}{cmyk}{0,1,0.9,0}
+\definecolor{btuMagenta}{cmyk}{0.10,1.00,0,0}
+\definecolor{btuDarkBlue}{cmyk}{1,0.70,0,0}
+\definecolor{btuLightBlue}{cmyk}{1,0,0.10,0}
+\definecolor{btuDarkGreen}{cmyk}{85,0,100,0}
+\definecolor{btuLightGreen}{cmyk}{0.45,0,1,0}
+\definecolor{btuOrange}{cmyk}{0,65,100,0}
+
+\usepackage{tikz}
+\tikzstyle{every picture}+=[font=\sffamily, color=btuBlack, text=btuBlack]
+\usetikzlibrary{arrows.meta, arrows, shapes, positioning, calc, chains, decorations.pathmorphing,shadows, decorations.shapes,
+  decorations.fractals,
+  decorations.markings,matrix}
+\usetikzlibrary{decorations.pathreplacing, math, patterns, fit}
+
+% --------------------------------------------------
+% acronyms
+\usepackage[printonlyused]{acronym}
+%
+% --------------------------------------------------
+% listings
+\usepackage{listings} % include listings
+% ==================================================
+% settings
+% ==================================================
+%
+\colorlet{CustomColorDark}{btuBlack!60}
+\definecolor{CustomColorLight}{rgb}{1, 1, 1}
+\colorlet{CustomColorLightBackground}{btuBlack!30}
+
+% TODO: change to print
+\hypersetup{%
+    colorlinks,
+    breaklinks,
+    urlcolor=btuLightBlue,
+    linkcolor=btuLightBlue,
+    citecolor=btuMagenta!60,
+    % urlcolor=black,
+    % linkcolor=black,
+    % citecolor=btuBlack,
+}
+
+\arrayrulecolor{btuBlack}  % choose color
+\renewcommand{\arraystretch}{1.2}
+
+\setcapindent{1em}      % line break for figure descriptions
+\pagestyle{headings}    % headers with page title
+\linespread{1.25}       % line spreading
+\KOMAoptions{DIV=last}
+%
+\renewcommand{\floatpagefraction}{0.75}
+%
+% --------------------------------------------------
+% captions
+%
+\usepackage[font=small,labelfont=bf]{caption}
+% --------------------------------------------------
+% fonts
+%
+\usepackage{lmodern}
+% --------------------------------------------------
+% listings
+
+% google code
+\definecolor{colorComment}{HTML}{880000}
+\definecolor{colorKeyword}{HTML}{000088}
+\definecolor{colorString}{HTML}{008800}
+
+% btu
+\definecolor{colorComment}{named}{btuLightGreen}
+\definecolor{colorKeyword}{named}{btuDarkBlue}
+\definecolor{colorKeywordAdditional}{named}{btuMagenta}
+\definecolor{colorKeywordAdditionalcltx}{named}{btuOrange}
+\definecolor{colorString}{named}{btuDarkGreen}
+
+\lstset{%
+    language=C++,
+    basicstyle = \ttfamily\small,
+    keywordstyle=\color{colorKeyword}\ttfamily,
+    stringstyle=\color{colorString}\ttfamily,
+    commentstyle=\color{colorComment}\ttfamily,
+    numbers=left,               % Zeilennummern links
+    stepnumber=1,               % Jede Zeile nummerieren.
+    numbersep=5pt,              % Abstand der Nummern zum Quellcode
+    numberstyle=\tiny,          % Zeichengroese fuer die Nummern.
+}
+
+\lstdefinestyle{PMDK}{%
+    keywordstyle={[2]\color{colorKeywordAdditional}\ttfamily},
+    keywords=[2]{persistent_ptr,p,pool_type,make_persistent,transaction,exec_tx,%
+    pmdk,pmdk_t},
+    keywordstyle={[3]\color{colorKeywordAdditionalcltx}\ttfamily},
+    keywords=[3]{cltx,single_p,multi_p},
+}
+% ==================================================
+% commands
+% ==================================================
+%
+\newcommand{\blank}[1]{} % simply blank a block
+\newcommand{\code}[1]{\texttt{#1}}  % mark as source code
+%
+% ==================================================
+% style of header - a colored box
+%
+% this section might be removed.
+% if removed, you may want to use headsepline in
+% the document options again
+% ==================================================
+\usepackage[automark]{scrlayer-scrpage}     % package for defining header and footer styles
+\pagestyle{scrheadings}             % set pagestyle
+\automark{section}                  %
+\clearscrheadings                   %
+\ihead{%                            % colored line below header
+    \headmark {\color{CustomColorDark}\hrule height 2pt}
+}
+\cfoot[]{}
+\ofoot{\pagemark}
+%
+\renewcommand{\headfont}{\normalfont\sffamily\bfseries}
+%
+\setkomafont{chapter}{\raggedleft\huge}
+
+\renewcommand*{\chapterheadstartvskip}{\vskip-10pt}
+\renewcommand*{\chapterformat}{%
+    \raggedleft
+    \sffamily\bfseries\color{CustomColorDark}
+    {
+        \LARGE\MakeUppercase{\chapapp\enskip}\Huge\thechapter\\%
+    }
+    \hrulefill\\[-9pt]
+}
+\renewcommand*{\chapterheadendvskip}{%
+    \vspace{0.9pc}
+    {\color{CustomColorDark}\hrule height 2pt}
+    \vspace{\baselineskip}
+}
+
+\renewcommand{\figureformat}{{\figurename~\thefigure}\autodot}
+
+\hyphenation{object-orientated}
+\hyphenation{micro-controller}
+
+% XXX: move to graphocs
+\pgfdeclarelayer{deepback}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{deepback,background,main,foreground}
+\makeatother
+
+% XXX: examples
+\newcommand{\nvram}{\ac{NVRAM}\xspace}
+\newcommand{\dram}{\ac{DRAM}\xspace}
+
+\usepackage{etoolbox}
+
+% long form of acronym at each chapter
+\preto\chapter\acresetall

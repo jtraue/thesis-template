@@ -1,0 +1,66 @@
+% ==================================================
+% LATEX main file
+% ==================================================
+% --------------------------------------------------
+%
+% definitions unrelated to actual contents
+\input{contents/global/header.tex}
+%
+% where are your images
+\graphicspath{{figures/}}
+%
+% bibliography
+\bibliography{bib/references.bib}
+%
+% common tikz settings
+\input{figures/styles.tex}
+%
+% --------------------------------------------------
+\begin{document}
+%
+% --------------------------------------------------
+\pagenumbering{alph} % numbering with letters
+\input{contents/global/titlepage.tex}
+\input{contents/abstract.tex}
+%
+% --------------------------------------------------
+\frontmatter
+\pagenumbering{roman} % numbering with roman numbers
+\input{contents/global/tableofcontents.tex}
+%
+% --------------------------------------------------
+\mainmatter
+\pagenumbering{arabic} % numbering with arabic numbers
+%
+% TODO: remove this chapter and put your own contents in it
+\include{contents/demo}
+% \include{contents/intro}
+% \include{contents/sota}
+% \include{contents/design}
+% \include{contents/evaluation}
+% \include{contents/conclusion}
+%
+% --------------------------------------------------
+% appendix
+\appendix
+\ihead{%
+    {\color{CustomColorDark}\hrule height 2pt}
+}
+\input{contents/global/acronyms.tex}
+%
+% --------------------------------------------------
+% bibliography
+%
+% for testing, prints all entries of your bibliography
+% \nocite{*}
+%
+% english bibliography styles
+% \bibliographystyle{unsrt}
+%\bibliographystyle{alpha}
+%
+% german bibliography styles
+%\bibliographystyle{babunsrt} % babble bibliography support
+%\bibliographystyle{gerunsrt} % items sorted in citation order
+\printbibliography
+%
+\end{document}

@@ -1,0 +1,17 @@
+extends: consistency
+message: "Inconsistent spelling of '%s'"
+level: warning
+scope: text
+ignorecase: true
+either:
+  runtime: run-time
+
+extends: substitution
+message: Use '%s' instead of '%s'
+ignorecase: true
+level: error
+swap:
+  et al~: et al.~
+  et al\\: et al.~\\
+  et al.\\: et al.~\\
+  cannot: can not
